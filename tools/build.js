@@ -5,7 +5,7 @@
 	"optimizeCss": "none",
     "paths": {
         "app": "../js/app",
-		"fuelux": "fuelux/fuelux"
+		"fuelux": "fuelux"
     },
     "dir": "../www-built",
     "modules": [

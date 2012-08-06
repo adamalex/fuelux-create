@@ -7,7 +7,7 @@ requirejs.config({
     baseUrl: 'lib',
     paths: {
         app: '../js/app',
-		fuelux: 'fuelux/fuelux'
+		fuelux: 'fuelux'
     }
 });
 
