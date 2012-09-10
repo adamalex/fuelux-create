@@ -1,5 +1,5 @@
 /*
- * FuelUX Combobox
+ * Fuel UX Combobox
  * https://github.com/ExactTarget/fuelux
  *
  * Copyright (c) 2012 ExactTarget
@@ -16,7 +16,7 @@ define(['require','jquery'],function(require) {
 	var Combobox = function (element, options) {
 		this.$element = $(element);
 		this.options = $.extend({}, $.fn.combobox.defaults, options);
-		this.$element.find('a').on('click', $.proxy(this.itemclicked, this));
+		this.$element.on('click', 'a', $.proxy(this.itemclicked, this));
 		this.$input = this.$element.find('input');
 	};
 
@@ -25,12 +25,13 @@ define(['require','jquery'],function(require) {
 		constructor: Combobox,
 
 		select: function (val) {
-			this.$input.val(val);
+			this.$input.val(val).change();
 			return this;
 		},
 
 		itemclicked: function (e) {
-			this.select(e.target.text);
+			this.select($(e.target).text());
+			$('body').click();
 			e.preventDefault();
 		}
 
